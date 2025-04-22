@@ -62,7 +62,7 @@
                     queryParams: {}
                 };
 
-                apigClient.getViews(params, body, additionalParams)
+                apigClient.rootGet(params, body, additionalParams)
                     .then(function(result) {
                         document.getElementById('view-count').innerText = JSON.stringify(result.data.body);
                         // document.getElementById('view-count-text').style.display = 'block';               

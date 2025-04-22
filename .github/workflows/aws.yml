@@ -8,6 +8,7 @@ on:
 env:
   BUCKET_NAME : "awsbucketsgp1"
   AWS_REGION : "ap-southeast-1"
+  CLOUDFRONT_DISTRIBUTION_ID : "E8VTWS5AHCN01"
 # permission can be added at job level or workflow level
 permissions:
   id-token: write   # This is required for requesting the JWT
@@ -29,3 +30,6 @@ jobs:
         run: |
           aws s3 cp ./resume.html s3://${{ env.BUCKET_NAME }}/
           aws s3 cp ./styles.css s3://${{ env.BUCKET_NAME }}/
+      - name: Invalidate CloudFront Cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{CLOUDFRONT_DISTRIBUTION_ID}} --paths "/*"

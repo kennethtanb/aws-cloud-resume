@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AWS Resume Challenge</title>
+        <link type="image/png" sizes="16x16" rel="icon" href="icons8-amazon-web-services-120.png">
+        <link rel="stylesheet" href="styles.css"/>
+        <meta charset="UTF-8">
+
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/axios/dist/axios.standalone.js"></script>
+        <!-- <script type="text/javascript" src="apiGateway-js-sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script> -->
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/CryptoJS/rollups/crypto-js.js"></script>        
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/CryptoJS/rollups/sha256.js"></script>
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/CryptoJS/components/hmac.js"></script>
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/CryptoJS/components/enc-base64.js"></script>
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/url-template/url-template.js"></script>
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/apiGatewayCore/utils.js"></script>
+        <script type="text/javascript" src="apiGateway-js-sdk/apigClient.js"></script>
+        <script>
+            function invokeApi() {
+                var apigClient = apigClientFactory.newClient();
+
+                var params = {};
+                var body = {};
+                var additionalParams = {
+                    headers: {},
+                    queryParams: {}
+                };
+
+                apigClient.updateGet(params, body, additionalParams)
+                    .then(function(result) {
+                        document.getElementById('view-count').innerText = JSON.stringify(result.data.body);
+                        // document.getElementById('view-count-text').style.display = 'block';               
+                        document.getElementById('view-count-text').classList.remove('hidden');       
+                        document.getElementById('loading').style.display = 'none';                 
+    
+
+                        
+                        // document.getElementById('view-count-text').classList.add('slide-in');                     
+   
+
+                        // console.log("Get and Update View Count")
+                    }).catch(function(error) {
+                        console.error('Error:', error);
+                    });
+            }
+
+            // invokeApi();
+        </script>
+    </head>
+        <body>
+            <h1>Kenneth Tan Benjamin</h1>
+            <h2>AWS Cloud Resume Challenge</h2>
+            <div>
+                <!-- <h2 id="view-count-text" class="fade-in">This has been viewed by <span id="view-count"></span> people</h2> -->
+                <h2 id="view-count-text" class="hidden">This has been viewed by <span id="view-count"></span> people</h2>
+                <div id="loading" class="spinner" style="display: flex; justify-content: center;"></div>
+                <script>invokeApi()</script>
+            </div>
+            <hr />
+            <div>
+                <p class="header"><b>Summary</b></p>
+                <p>I am an aspiring cloud computing professional currently embarking on an AWS project to deepen my understanding of cloud technologies. Though I am at the beginning of my AWS journey, I am dedicated to learning and applying AWS best practices to build effective cloud solutions. This resume reflects my current project work and my commitment to growing my skills in AWS. I am eager to contribute my enthusiasm and newfound knowledge to future opportunities in the cloud computing field.</p>            
+            </div>
+            
+            <div>
+                <p class="header"><b>Experience</b></p>
+                <p><b>AWS Cloud Resume Challenge</b></p>
+                <ul>
+                    <li>Created and styled a resume webpage using HTML and CSS.</li>
+                    <li>Deployed the webpage on Amazon S3 with HTTPS via CloudFront and configured a custom domain with Route 53.</li>
+                    <li>Implemented a JavaScript visitor counter with data stored in DynamoDB.</li>
+                    <li>Developed an API with AWS API Gateway and Lambda, using Python for Lambda functions and integrating with DynamoDB.</li>
+                    <li>Defined AWS resources with Terraform for automated deployment. (IaaC)</li>
+                    <li>Set up GitHub Actions for continuous integration and deployment (CI/CD) of both front-end and back-end code.</li>
+                    <li>Published a blog post detailing the project and learning experiences.</li>
+                </ul>
+
+                <p><b>Managing the Student Association Website</b></p>
+                <ul>
+                    <li>Managed and redesigned the PPI Hsinchu website (<a href="https://ppihsinchu.org" target="_blank" title="Visit PPI Hsinchu Website">ppihsinchu.org</a>) using WordPress, gaining hands-on experience in web design and UI/UX.</li>
+                    <li>Acquired web design skills through WordPress documentation and tools, overcoming limitations while understanding the fundamentals of UI/UX.</li>
+                </ul>
+
+                <p><b>Approximate kNN Indexing on a Vector Database</b></p>
+                <ul>
+                    <li>Studied and modified VanillaDB, a Java-based relational database using PostgreSQL, to handle high-dimensional vector data.</li>
+                    <li>Utilized Java JDBC for database interactions and implemented concurrency controls to manage indexing and querying processes.</li>
+                    <li>Integrated Locality Sensitive Hashing (LSH) for Approximate K-Nearest-Neighbor (AKNN) queries, tackling challenges related to modifying the indexing function in VanillaDB.</li>
+                    <li>Enhanced query throughput while addressing recall issues by refining the indexing mechanism and employing appropriate hashing algorithms.</li>
+                </ul>
+            </div>
+            <div>
+                <p class="header"><b>Education</b></p>
+                <p><b>National Tsing Hua University</b></p>
+                <p class="sub"><i>International Bachelor Degree Program (2020-2024)</i></p>
+                <ul>
+                    <li>First Profession: Specialization in Chinese language and culture.</li>
+                    <li>Second Profession: Completed additional coursework and training in Computer Science.</li>
+                </ul>
+            </div>
+            <div>
+                <p class="header"><b>Organization</b></p>
+                <p><b>Indonesian Student Association in Hsinchu (PPI Hsinchu)</b></p>
+                <p class="sub"><i>Public Relations Team Member (2023-2024)</i></p>
+                <ul>
+                    <li>Managed and curated content for the organization's social media platforms to enhance community engagement.</li>
+                    <li>Designed, edited, and produced videos for promotional and cultural events, strengthening the association's visual communication.</li>
+                    <li>Led the design, improvement, and maintenance of the association's website, ensuring a professional and effective online presence.</li>
+                    <li>Played a key role in organizing and promoting events, connecting students with the local community.</li>
+                </ul>
+
+                <p><b>Foreign Student Association</b></p>
+                <p class="sub"><i>Head of Public Relations Team (2021-2022)</i></p>
+                <ul>
+                    <li>Led the Public Relations team in designing and managing the organization’s social media presence.</li>
+                    <li>Developed and executed content strategies to promote events and foster community engagement among foreign students.</li>
+                    <li>Coordinated with other team members to ensure consistent and effective communication across all platforms.</li>
+                </ul>
+            </div>
+
+            <div class="container">
+                <div class="column">
+                    <p class="header"><b>Language</b></p>
+                    <hr />
+                    <ul>
+                        <li>English (IELTS 7.0)</li>
+                        <li>Chinese 繁體中文</li>
+                        <li>Indonesian</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <p class="header"><b>Skills</b></p>
+                    <hr />
+                    <ul>
+                        <li>AWS</li>
+                        <li>Python, Java, C++</li>
+                        <li>Git Version Control</li>
+
+                    </ul>
+                </div>
+                <div class="column">
+                    <p class="header"><b>MBTI</b></p>
+                    <hr />
+                    <ul>
+                        <li>INTJ</li>
+                    </ul>
+                </div>
+            </div>
+
+    </body> 
+</html>

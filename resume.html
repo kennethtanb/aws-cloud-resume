@@ -19,7 +19,11 @@
         <script type="text/javascript" src="apiGateway-js-sdk/lib/apiGatewayCore/utils.js"></script>
         <script type="text/javascript" src="apiGateway-js-sdk/apigClient.js"></script>
         <script>
-            function invokeApi() {
+
+                
+            if (!sessionStorage.getItem("hasVisited")) {
+              sessionStorage.setItem("hasVisited", "true");
+                function invokeApi() {
                 var apigClient = apigClientFactory.newClient();
 
                 var params = {};
@@ -45,6 +49,35 @@
                     }).catch(function(error) {
                         console.error('Error:', error);
                     });
+            }
+                else {
+                function invokeApi() {
+                var apigClient = apigClientFactory.newClient();
+
+                var params = {};
+                var body = {};
+                var additionalParams = {
+                    headers: {},
+                    queryParams: {}
+                };
+
+                apigClient.getViews(params, body, additionalParams)
+                    .then(function(result) {
+                        document.getElementById('view-count').innerText = JSON.stringify(result.data.body);
+                        // document.getElementById('view-count-text').style.display = 'block';               
+                        document.getElementById('view-count-text').classList.remove('hidden');       
+                        document.getElementById('loading').style.display = 'none';                 
+    
+
+                        
+                        // document.getElementById('view-count-text').classList.add('slide-in');                     
+   
+
+                        // console.log("Get and Update View Count")
+                    }).catch(function(error) {
+                        console.error('Error:', error);
+                    });
+                
             }
 
             // invokeApi();

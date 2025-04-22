@@ -1,6 +1,11 @@
 # 💻Cloud Resume Challenge☁
 
 This project is my implementation of the [Cloud Resume Challenge](https://cloudresumechallenge.dev/), designed to showcase practical experience in cloud computing and full-stack development using AWS.
+
+### 🚀 Check out the live site here → **[kennethtanb.com](https://d2kj5s4sy68dg0.cloudfront.net/)**  
+
+
+
 ## 💡Features
 
 - ### Resume Website
@@ -19,3 +24,4 @@ This project is my implementation of the [Cloud Resume Challenge](https://cloudr
 - Frontend: HTML, CSS, JavaScript
 - Backend/Cloud: AWS S3, CloudFront, API Gateway, Lambda (Python), DynamoDB, IAM
 - DevOps: GitHub Actions (CI/CD)
+

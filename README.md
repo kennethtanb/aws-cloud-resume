@@ -1,7 +1,7 @@
-# Cloud Resume Challenge
+# 💻Cloud Resume Challenge☁
 
 This project is my implementation of the [Cloud Resume Challenge](https://cloudresumechallenge.dev/), designed to showcase practical experience in cloud computing and full-stack development using AWS.
-## Features
+## 💡Features
 
 - ### Resume Website
 	Built with HTML and CSS, styled as a personal resume and hosted on Amazon S3 with HTTPS via CloudFront.
@@ -15,7 +15,7 @@ This project is my implementation of the [Cloud Resume Challenge](https://cloudr
 - ### Infrastructure & Deployment
 	The entire system simulates production-like cloud deployment, with serverless architecture, version control, and automated workflows.
 
-## Tech Stack
+## 🔧Tech Stack
 - Frontend: HTML, CSS, JavaScript
 - Backend/Cloud: AWS S3, CloudFront, API Gateway, Lambda (Python), DynamoDB, IAM
 - DevOps: GitHub Actions (CI/CD)

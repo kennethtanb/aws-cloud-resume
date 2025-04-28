@@ -1,6 +1,6 @@
 # ☁Cloud Resume Challenge
 
-This project is my implementation of the [Cloud Resume Challenge](https://cloudresumechallenge.dev/), designed to showcase practical experience in cloud computing and full-stack development using AWS.
+This project is my implementation of the [Cloud Resume Challenge](https://cloudresumechallenge.dev/docs/the-challenge/aws/), designed to showcase practical experience in cloud computing and full-stack development using AWS.
 
 ### 🚀 Check out the live site here → **[Website](https://d2kj5s4sy68dg0.cloudfront.net/)**  
 
